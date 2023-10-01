@@ -1,0 +1,29 @@
+<div *ngIf="user">
+
+    <h2>{{user.username}}</h2>
+    <div> 
+        First Name:
+        <input [(ngModel)] = "user.fname" placeholder="First Name" />
+    </div>
+    <div> 
+        Last Name:
+        <input [(ngModel)] = "user.lname" placeholder="Last Name" />
+    </div>
+    <div> 
+        Username:
+        <input [(ngModel)] = "user.username" placeholder="First Name" />
+    </div>
+    <div> 
+        Email Address:
+        <input [(ngModel)] = "user.email" placeholder="Email" />
+    </div>
+    <div> 
+        Password:
+        <input [(ngModel)] = "user.password" placeholder="Password" />
+    </div>
+
+    <button (click)="updateUser(user)" *ngIf="user.userId">Update User</button>
+    <button (click)="deleteUser(user)" *ngIf="user.userId">Delete User</button>
+    <button (click)="addUser(user)" *ngIf="!user.userId">New User</button>
+
+</div>
